@@ -52,7 +52,7 @@ userRoute.post("/user/register", async (req, res) => {
     ) {
       return res.status(400).json({
         message:
-          "Password must have a minimun length of 8 and at least one number",
+          "Password must have a minimun length of 6 and at least one number",
       });
     }
 
