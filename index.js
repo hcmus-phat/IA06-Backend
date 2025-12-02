@@ -9,7 +9,7 @@ const userRoute = express.Router();
 const app = express();
 const PORT = process.env.PORT || 3500;
 
-const corsWhitelist = ["http://localhost:5173", "https://www.yoursite.com"];
+const corsWhitelist = (process.env.CORS_WHITELIST || "http://localhost:5173").split(",").map(s => s.trim());
 const corsOptions = {
     origin: (origin, callback) => {
         console.log(origin);
